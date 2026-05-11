@@ -1,0 +1,4 @@
+CONTEXT.md
+node_modules/
+.env
+*.zip
