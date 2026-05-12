@@ -1,7 +1,7 @@
 # alexa-wake-on-lan
 
-Serverless Alexa Smart Home skill that wakes a home PC ("Ronin") via Wake-on-LAN.
-Voice command: "Alexa, turn on Ronin."
+Serverless Alexa Smart Home skill that wakes a home PC via Wake-on-LAN.
+Voice command: "Alexa, turn on [your PC name]."
 
 No local bridge server, no open router ports, no subscription service.
 
@@ -15,7 +15,7 @@ magic packet on the LAN. The cloud never touches the LAN directly.
 
 | Key | Value |
 |---|---|
-| PC friendly name | `Ronin` |
+| PC friendly name | set via `PC_FRIENDLY_NAME` env var |
 | MAC address | `REDACTED` |
 | Lambda runtime | Node.js 20.x or Python 3.12 (undecided) |
 | Lambda architecture | arm64 |
@@ -84,4 +84,4 @@ alexa-wake-on-lan/
 4. Write and deploy Lambda handler
 5. Configure account linking in skill
 6. Enable skill in Alexa app, link account, discover devices
-7. Test: "Alexa, turn on Ronin"
+7. Test: "Alexa, turn on [your PC name]"
