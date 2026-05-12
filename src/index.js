@@ -77,7 +77,7 @@ function handleReportState(event) {
         {
           namespace: "Alexa.PowerController",
           name: "powerState",
-          value: "OFF",
+          value: "ON",
           timeOfSample: new Date().toISOString(),
           uncertaintyInMilliseconds: 0,
         },
