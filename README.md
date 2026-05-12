@@ -122,6 +122,25 @@ No WoL library needed — the Echo handles the broadcast.
 
 ---
 
+## Testing
+
+**Lambda console:** open your function → Test tab → create a new test event → paste from `events/*.json` → Run.
+
+**Locally** (no dependencies, Node.js 20+ required):
+
+```bash
+MAC_ADDRESS=AA:BB:CC:DD:EE:FF node --input-type=module << 'EOF'
+import { readFileSync } from 'fs';
+import { handler } from './src/index.js';
+const event = JSON.parse(readFileSync('./events/discover.json', 'utf8'));
+console.log(JSON.stringify(await handler(event), null, 2));
+EOF
+```
+
+Swap `discover.json` for `turn-on.json` or `report-state.json` to test the other paths.
+
+---
+
 ## Security
 
 - Store the MAC address in a Lambda environment variable, not in source code
