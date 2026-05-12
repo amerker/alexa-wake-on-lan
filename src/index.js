@@ -2,7 +2,7 @@ const MAC_ADDRESS = process.env.MAC_ADDRESS;
 const PC_FRIENDLY_NAME = process.env.PC_FRIENDLY_NAME ?? "Ronin";
 const ENDPOINT_ID = "ronin-pc-001";
 
-export const handler = async (event) => {
+exports.handler = async (event) => {
   const namespace = event?.directive?.header?.namespace;
   const name = event?.directive?.header?.name;
 
