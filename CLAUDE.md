@@ -16,7 +16,7 @@ magic packet on the LAN. The cloud never touches the LAN directly.
 | Key | Value |
 |---|---|
 | PC friendly name | set via `PC_FRIENDLY_NAME` env var |
-| MAC address | `REDACTED` |
+| MAC address | set via `MAC_ADDRESS` env var |
 | Lambda runtime | Node.js 20.x or Python 3.12 (undecided) |
 | Lambda architecture | arm64 |
 
