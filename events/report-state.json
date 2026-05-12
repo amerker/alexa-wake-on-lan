@@ -1,0 +1,19 @@
+{
+  "directive": {
+    "header": {
+      "namespace": "Alexa",
+      "name": "ReportState",
+      "payloadVersion": "3",
+      "messageId": "test-message-id-reportstate",
+      "correlationToken": "test-correlation-token"
+    },
+    "endpoint": {
+      "endpointId": "wol-pc-001",
+      "scope": {
+        "type": "BearerToken",
+        "token": "test-token"
+      }
+    },
+    "payload": {}
+  }
+}

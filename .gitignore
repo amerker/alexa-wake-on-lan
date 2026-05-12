@@ -1,4 +1,5 @@
 CONTEXT.md
+.claude/
 node_modules/
 .env
 *.zip

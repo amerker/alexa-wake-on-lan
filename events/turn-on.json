@@ -1,0 +1,19 @@
+{
+  "directive": {
+    "header": {
+      "namespace": "Alexa.PowerController",
+      "name": "TurnOn",
+      "payloadVersion": "3",
+      "messageId": "test-message-id-turnon",
+      "correlationToken": "test-correlation-token"
+    },
+    "endpoint": {
+      "endpointId": "wol-pc-001",
+      "scope": {
+        "type": "BearerToken",
+        "token": "test-token"
+      }
+    },
+    "payload": {}
+  }
+}
