@@ -33,8 +33,9 @@ Responds to exactly two directive namespaces:
 2. **`Alexa.ReportState`** — return power state as `OFF` (PC is off when WoL is needed;
    Lambda can't ping it; OFF is honest and correct)
 
-Alexa does NOT send a `TurnOn` directive for WoL devices — it handles the magic packet
-broadcast itself after discovery. No WoL library needed in the Lambda.
+Alexa DOES send a `TurnOn` directive even for WoL devices. The Lambda must respond with
+a success `Alexa.Response` or Alexa will say "not responding." Alexa also broadcasts the
+magic packet to the local Echo independently. No WoL library needed in the Lambda.
 
 ## Lambda resource policy
 
