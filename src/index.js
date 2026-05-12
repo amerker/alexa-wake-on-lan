@@ -14,6 +14,10 @@ export const handler = async (event) => {
     return handleReportState(event);
   }
 
+  if (namespace === "Alexa.PowerController" && (name === "TurnOn" || name === "TurnOff")) {
+    return handlePowerControl(event, name === "TurnOn" ? "ON" : "OFF");
+  }
+
   throw new Error(`Unhandled directive: ${namespace}/${name}`);
 };
 
@@ -63,6 +67,36 @@ function handleDiscovery(event) {
           },
         ],
       },
+    },
+  };
+}
+
+function handlePowerControl(event, powerState) {
+  const { correlationToken, messageId } = event.directive.header;
+  const endpointId = event.directive.endpoint.endpointId;
+
+  return {
+    context: {
+      properties: [
+        {
+          namespace: "Alexa.PowerController",
+          name: "powerState",
+          value: powerState,
+          timeOfSample: new Date().toISOString(),
+          uncertaintyInMilliseconds: 0,
+        },
+      ],
+    },
+    event: {
+      header: {
+        namespace: "Alexa",
+        name: "Response",
+        payloadVersion: "3",
+        messageId,
+        correlationToken,
+      },
+      endpoint: { endpointId },
+      payload: {},
     },
   };
 }
