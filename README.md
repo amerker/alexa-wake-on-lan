@@ -54,6 +54,8 @@ AVM Fritzbox routers expose a TR-064 SOAP API (`X_AVM-DE_WakeOnLANByMACAddress`)
 - Echo device on the same LAN as the target PC
 - Wake-on-LAN enabled on the target PC (see below)
 
+> **AWS plan:** New AWS accounts start on the Free plan, which closes the account after 6 months (or when credits run out), even if you only use Always Free services like Lambda. Upgrade to the Paid plan before then. AWS keeps a closed account's data for 90 days, but don't rely on that. Lambda's Always Free allowance (1M requests per month) still applies on the Paid plan, so a skill this small stays at roughly zero cost. Set an AWS Budgets alert (e.g. $1) as a safety net.
+
 ---
 
 ## Setup
